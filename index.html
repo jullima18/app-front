@@ -1,14 +1,12 @@
-
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Galeria Oceânica de Pessoas</title>
-  
+    <link rel="stylesheet" href="./style.css">
+    <title>Document</title>
 </head>
 <body>
-
     <div class="bubbles">
         <div class="bubble"></div>
         <div class="bubble"></div>
@@ -24,13 +22,13 @@
             <form id="pessoaForm">
                 <div class="form-group">
                     <label for="nome">🏴‍☠️ Nome do Marinheiro(a):</label>
-                    <input type="text" id="nome" required placeholder="Ex: Capitão Silva dos Sete Mares">
+                    <input type="text" id="nome" placeholder="Ex: Capitão Silva dos Sete Mares">
                 </div>
                 <div class="form-group">
                     <label for="foto">📸 Retrato Oficial:</label>
                     <input type="file" id="foto" accept="image/*" required>
                 </div>
-                <button type="submit" class="submit-btn">⚓ Adicionar à Frota</button>
+                <button type="button" class="submit-btn" id="btn" onclick="criarUsuario()">⚓ Adicionar à Frota</button>
             </form>
         </div>
 
@@ -39,4 +37,7 @@
         </div>
     </div>
 
-   
+    <script src="./script.js"></script>
+    
+</body>
+</html>

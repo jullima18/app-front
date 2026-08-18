@@ -1,32 +1,41 @@
-const inputupload = document.getelementbyid('meu-upload')
 
-const url_imagem= ""
-const nome = ""
+var url_imagem = ""
+var nome = ""
 
-inputupload.addeventlistener('change',function(evento) {
+const inputUpload = document.getElementById('foto')
 
-    const arquivo  = evento.target.files[0]
+inputUpload.addEventListener('change', function(evento) {
 
-    if(arquivo) {
+    const arquivo = evento.target.files[0]
+
+    if (arquivo) {
         url_imagem = arquivo.name
-        const nomedaimagem = arquivo.nome
-console.log(nomedaimagem)
-    } else{
+        const nomedaimagem = arquivo.name
+        console.log(nomedaimagem)
+    } else {
         console.log("nenhum arquivo selecionado.")
     }
-    
+
 });
 
+const inputNome = document.getElementById("nome")
+
+const button = document.getElementById("btn")
+
+button.addEventListener("click", () => {
+    nome = inputNome.value
+    criarUsuario()
+})
+
 async function criarUsuario() {
-    const novoUsuario = {nome: 'ana', idade:25}
-    
-};
-const resposta = await fetch ('https://exemplo.com',{
-method: 'post',
-headers:{
-    'content-type':'application/json'
-};
-body: JSON.stringify(novoUsuario)
-});
-const resultado = await resposta.json();
-console.log ('criado com sucesso:',resultado)
+
+    const novoUsuario = { "nome": nome, "url": url_imagem }
+
+    const resposta = await fetch("https://localhost:3000/alunos", {
+        method: 'post',
+        headers: {
+            'content-type': 'application/json'
+        },
+        body: JSON.stringify(novoUsuario)
+    });
+}
