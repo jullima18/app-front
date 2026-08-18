@@ -29,9 +29,9 @@ button.addEventListener("click", () => {
 
 async function criarUsuario() {
 
-    const novoUsuario = { "nome": nome, "url": url_imagem }
+    const novoUsuario = { "nome": nome, "url_imagem": url_imagem }
 
-    const resposta = await fetch("https://localhost:3000/alunos", {
+    const resposta = await fetch("http://localhost:3000/alunos", {
         method: 'post',
         headers: {
             'content-type': 'application/json'
